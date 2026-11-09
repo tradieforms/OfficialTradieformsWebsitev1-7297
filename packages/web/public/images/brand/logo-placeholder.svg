@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 120" role="img" aria-label="Your logo placeholder">
+  <!-- Transparent background on purpose: only the mark itself is drawn. -->
+  <g stroke="#FFFFFF" stroke-width="7" stroke-linejoin="round" paint-order="stroke">
+    <path d="M38 22 L66 32 L66 60 C66 80 52 92 38 98 C24 92 10 80 10 60 L10 32 Z" fill="#F26B21"/>
+    <text x="82" y="56" font-family="Archivo, 'Arial Black', Helvetica, Arial, sans-serif" font-size="34" font-weight="900" letter-spacing="1" fill="#0B2A5B">YOUR</text>
+    <text x="82" y="94" font-family="Archivo, 'Arial Black', Helvetica, Arial, sans-serif" font-size="34" font-weight="900" letter-spacing="1" fill="#0B2A5B">LOGO</text>
+  </g>
+  <path d="M38 40 L52 46 L52 62 C52 72 46 78 38 82 C30 78 24 72 24 62 L24 46 Z" fill="#FFC72C"/>
+</svg>

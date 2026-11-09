@@ -1,0 +1,441 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ---------- Self-hosted type ---------- */
+
+@font-face {
+  font-family: "Archivo";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/fonts/archivo-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Archivo";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/fonts/archivo-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0,
+    U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/barlow-400-latin.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/barlow-500-latin.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/barlow-600-latin.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/barlow-700-latin.woff2") format("woff2");
+}
+
+@theme {
+  --font-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --font-sans: "Barlow", "Helvetica Neue", Arial, sans-serif;
+
+  --color-tf-navy: #0b2a5b;
+  --color-tf-navy-deep: #06152e;
+  --color-tf-navy-mid: #123b78;
+  --color-tf-yellow: #ffc72c;
+  --color-tf-orange: #f26b21;
+  --color-tf-orange-deep: #d4550f;
+  /* AA-safe orange variants. Brand orange (#F26B21) is only 3.0:1 against
+     white, so text and white-on-orange fills use these darker steps. */
+  --color-tf-cta: #c4500e; /* white text 4.67:1 */
+  --color-tf-cta-deep: #a9440b;
+  --color-tf-rust: #b5470b; /* text on white 5.4:1, on paper 4.9:1 */
+  --color-tf-paper: #f6f4ef;
+  --color-tf-paper-dim: #ece8df;
+  --color-tf-steel: #5c6572;
+  --color-tf-ink: #12151a;
+  --color-tf-line: #e2dfd7;
+  --color-tf-line-dark: #24374f;
+
+  --radius-tf: 2px;
+}
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+:root {
+  --radius: 2px;
+  --background: #ffffff;
+  --foreground: #12151a;
+  --card: #ffffff;
+  --card-foreground: #12151a;
+  --popover: #ffffff;
+  --popover-foreground: #12151a;
+  --primary: #f26b21;
+  --primary-foreground: #ffffff;
+  --secondary: #f6f4ef;
+  --secondary-foreground: #0b2a5b;
+  --muted: #f6f4ef;
+  --muted-foreground: #5c6572;
+  --accent: #f6f4ef;
+  --accent-foreground: #0b2a5b;
+  --destructive: #b4232a;
+  --border: #e2dfd7;
+  --input: #e2dfd7;
+  --ring: #0b2a5b;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-white text-tf-ink antialiased;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: var(--font-display);
+    letter-spacing: -0.028em;
+    line-height: 0.98;
+    font-weight: 800;
+    text-wrap: balance;
+  }
+  /* Two-tone focus ring: yellow reads on navy, the navy halo reads on white
+     and paper, so focus is visible on every surface in the brand palette. */
+  :focus-visible {
+    outline: 3px solid var(--color-tf-yellow);
+    outline-offset: 2px;
+    border-radius: 1px;
+    box-shadow: 0 0 0 5px var(--color-tf-navy-deep);
+  }
+  ::selection {
+    background: var(--color-tf-yellow);
+    color: var(--color-tf-navy-deep);
+  }
+}
+
+@layer components {
+  .tf-shell {
+    width: 100%;
+    max-width: 1320px;
+    margin-inline: auto;
+    padding-inline: clamp(1.1rem, 4vw, 3rem);
+  }
+
+  .tf-eyebrow {
+    font-family: var(--font-display);
+    font-size: clamp(0.68rem, 1.5vw, 0.78rem);
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .tf-display {
+    font-family: var(--font-display);
+    font-weight: 800;
+    letter-spacing: -0.032em;
+    line-height: 0.94;
+  }
+
+  .tf-hairline {
+    height: 1px;
+    background: currentColor;
+    opacity: 0.22;
+  }
+
+  /* Industrial grit — the one permitted texture, kept very faint. */
+  .tf-grit {
+    background-image:
+      linear-gradient(115deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(65deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    background-size: 22px 22px, 17px 17px;
+  }
+
+  .tf-hatch {
+    background-image: repeating-linear-gradient(
+      -45deg,
+      rgba(11, 42, 91, 0.05) 0 2px,
+      transparent 2px 7px
+    );
+  }
+
+  .btn-base {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: var(--radius-tf);
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    font-size: 0.9rem;
+    padding: 0.85rem 1.5rem;
+    transition:
+      transform 180ms cubic-bezier(0.22, 0.61, 0.36, 1),
+      background-color 180ms ease,
+      color 180ms ease,
+      border-color 180ms ease;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .btn-base:active:not(:disabled) {
+    transform: translateY(1px);
+  }
+  /* Disabled buttons stay legible (AA) instead of fading to a ghost. */
+  .btn-base:disabled {
+    cursor: not-allowed;
+  }
+  .btn-primary {
+    background: var(--color-tf-cta);
+    color: #fff;
+  }
+  .btn-primary:hover:not(:disabled) {
+    background: var(--color-tf-cta-deep);
+    transform: translateY(-1px);
+  }
+  .btn-primary:disabled {
+    background: var(--color-tf-steel);
+    color: #fff;
+  }
+  .btn-secondary {
+    background: transparent;
+    color: currentColor;
+    border: 1px solid currentColor;
+  }
+  /* Hover tints with the button's own colour rather than inverting to a solid
+     fill — inverting made navy-on-white buttons render navy text on navy. */
+  .btn-secondary:hover:not(:disabled) {
+    background: color-mix(in srgb, currentColor 12%, transparent);
+    transform: translateY(-1px);
+  }
+  .btn-secondary:disabled {
+    opacity: 0.7;
+  }
+  .btn-yellow {
+    background: var(--color-tf-yellow);
+    color: var(--color-tf-navy-deep);
+  }
+  .btn-yellow:hover:not(:disabled) {
+    background: #ffd75e;
+    transform: translateY(-1px);
+  }
+  .btn-yellow:disabled {
+    background: #d9d4c7;
+    color: #333a45;
+  }
+
+  .tf-input::placeholder {
+    color: #6b7380;
+  }
+  .tf-input {
+    width: 100%;
+    background: #fff;
+    border: 1px solid var(--color-tf-line);
+    border-radius: var(--radius-tf);
+    padding: 0.7rem 0.85rem;
+    font-size: 0.95rem;
+    color: var(--color-tf-ink);
+    transition: border-color 160ms ease;
+  }
+  .tf-input:focus {
+    border-color: var(--color-tf-navy);
+  }
+  .tf-input[aria-invalid="true"] {
+    border-color: var(--color-tf-orange);
+  }
+
+  .tf-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    border: 1px solid var(--color-tf-line);
+    border-radius: 999px;
+    padding: 0.35rem 0.8rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    transition: all 160ms ease;
+    cursor: pointer;
+    background: #fff;
+    /* Explicit ink: chips used to inherit white text inside dark panels and
+       render white-on-white (the reported invisible size selector). */
+    color: var(--color-tf-ink);
+  }
+  .tf-chip:hover:not(:disabled) {
+    border-color: var(--color-tf-navy);
+  }
+  .tf-chip[aria-pressed="true"],
+  .tf-chip[data-selected="true"] {
+    border-color: var(--color-tf-navy);
+    background: var(--color-tf-navy);
+    color: #fff;
+  }
+  .tf-chip:disabled {
+    background: var(--color-tf-paper-dim);
+    color: #4a525e;
+    text-decoration: line-through;
+    cursor: not-allowed;
+  }
+
+  /* Transparency checkerboard: shows a logo's real alpha instead of a white box. */
+  .tf-checker {
+    background-color: #fff;
+    background-image:
+      linear-gradient(45deg, #e6e3dc 25%, transparent 25%),
+      linear-gradient(-45deg, #e6e3dc 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, #e6e3dc 75%),
+      linear-gradient(-45deg, transparent 75%, #e6e3dc 75%);
+    background-size: 10px 10px;
+    background-position: 0 0, 0 5px, 5px -5px, -5px 0;
+  }
+
+  .tf-card {
+    background: #fff;
+    border: 1px solid var(--color-tf-line);
+    border-radius: var(--radius-tf);
+  }
+
+  .tf-stage {
+    background:
+      radial-gradient(120% 90% at 50% 8%, #ffffff 0%, #f4f2ed 68%, #ebe7de 100%);
+    border-radius: var(--radius-tf);
+  }
+
+  .tf-stage-dark {
+    background:
+      radial-gradient(110% 80% at 50% 0%, #12305c 0%, #0b2a5b 45%, #06152e 100%);
+  }
+
+  .tf-reveal {
+    opacity: 0;
+    transform: translateY(26px);
+    transition:
+      opacity 620ms cubic-bezier(0.22, 0.61, 0.36, 1),
+      transform 620ms cubic-bezier(0.22, 0.61, 0.36, 1);
+    will-change: opacity, transform;
+  }
+  .tf-reveal[data-visible="true"] {
+    opacity: 1;
+    transform: none;
+  }
+
+  .tf-marquee-track {
+    animation: tf-marquee 34s linear infinite;
+  }
+  @keyframes tf-marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+/* ---------- Hero orbit ---------- */
+
+.tf-orbit-scene {
+  perspective: 1500px;
+  perspective-origin: 50% 46%;
+  transform-style: preserve-3d;
+}
+
+.tf-orbit-ring {
+  position: absolute;
+  top: 0;
+  bottom: 8%;
+  left: 0;
+  right: 0;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* Desktop: the orbit occupies the right of the stage so the opening headline
+   always has clear ground and the front card is never read through it.
+   Below lg the hero stacks instead (see orbital-hero.tsx). */
+@media (width >= 64rem) {
+  .tf-orbit-ring {
+    left: 26%;
+    right: 1%;
+  }
+}
+
+.tf-orbit-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .tf-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .tf-marquee-track {
+    animation: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tf-orbit-ring,
+  .tf-orbit-card {
+    will-change: auto;
+  }
+}

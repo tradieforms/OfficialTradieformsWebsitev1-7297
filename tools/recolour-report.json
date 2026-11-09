@@ -1,0 +1,112 @@
+{
+  "jacketb-navy-front-recolour.png": {
+    "source": "jacketb-black-front.png",
+    "target": "#12305C",
+    "garmentMean": "#112F5A"
+  },
+  "jacketb-navy-back-recolour.png": {
+    "source": "jacketb-black-back.png",
+    "target": "#12305C",
+    "garmentMean": "#112E59"
+  },
+  "jacketb-charcoal-front-recolour.png": {
+    "source": "jacketb-black-front.png",
+    "target": "#3C4149",
+    "garmentMean": "#3B3F47"
+  },
+  "jacketb-charcoal-back-recolour.png": {
+    "source": "jacketb-black-back.png",
+    "target": "#3C4149",
+    "garmentMean": "#3A3F46"
+  },
+  "jacket-black-front-recolour.png": {
+    "source": "jacket-navy-front.png",
+    "target": "#15171A",
+    "garmentMean": "#15171A"
+  },
+  "jacket-black-back-recolour.png": {
+    "source": "jacket-navy-back.png",
+    "target": "#15171A",
+    "garmentMean": "#141618"
+  },
+  "tank-black-back-recolour.png": {
+    "source": "tank-charcoal-back.png",
+    "target": "#15171A",
+    "garmentMean": "#15171A"
+  },
+  "tank-white-back-recolour.png": {
+    "source": "tank-charcoal-back.png",
+    "target": "#F2F1EC",
+    "garmentMean": "#EBEAE7"
+  },
+  "tank-charcoal-front-recolour.png": {
+    "source": "tank-black-front.png",
+    "target": "#4F4C53",
+    "garmentMean": "#4E4B52"
+  },
+  "vest-white-front-recolour.png": {
+    "source": "vest-black-front.png",
+    "target": "#F2F1EC",
+    "garmentMean": "#E9E8E4"
+  },
+  "vest-white-back-recolour.png": {
+    "source": "vest-black-back.png",
+    "target": "#F2F1EC",
+    "garmentMean": "#E6E5E2"
+  },
+  "vest-navy-front-recolour.png": {
+    "source": "vest-black-front.png",
+    "target": "#12305C",
+    "garmentMean": "#12315E"
+  },
+  "vest-navy-back-recolour.png": {
+    "source": "vest-black-back.png",
+    "target": "#12305C",
+    "garmentMean": "#12315E"
+  },
+  "vest-red-front-recolour.png": {
+    "source": "vest-black-front.png",
+    "target": "#B4232A",
+    "garmentMean": "#B3242B"
+  },
+  "vest-red-back-recolour.png": {
+    "source": "vest-black-back.png",
+    "target": "#B4232A",
+    "garmentMean": "#B3242B"
+  },
+  "hoodie-white-back-recolour.png": {
+    "source": "hoodie-navy-back.png",
+    "target": "#F2F1EC",
+    "garmentMean": "#E8E8E4"
+  },
+  "polo-navy-front-recolour.png": {
+    "source": "polo-white-front.png",
+    "target": "#12305C",
+    "garmentMean": "#112E5A"
+  },
+  "polo-navy-back-recolour.png": {
+    "source": "polo-white-back.png",
+    "target": "#12305C",
+    "garmentMean": "#112F5A"
+  },
+  "tshirt-white-front-recolour.png": {
+    "source": "tshirt-black-front.png",
+    "target": "#F2F1EC",
+    "garmentMean": "#E5E4E0"
+  },
+  "tshirt-navy-front-recolour.png": {
+    "source": "tshirt-black-front.png",
+    "target": "#12305C",
+    "garmentMean": "#112F5B"
+  },
+  "cap-navy-front-recolour.png": {
+    "source": "cap-black-front.png",
+    "target": "#12305C",
+    "garmentMean": "#112F5A"
+  },
+  "cap-white-front-recolour.png": {
+    "source": "cap-black-front.png",
+    "target": "#F2F1EC",
+    "garmentMean": "#E2E1DC"
+  }
+}

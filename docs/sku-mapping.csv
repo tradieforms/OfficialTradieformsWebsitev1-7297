@@ -1,0 +1,14 @@
+product,option,slug,variant_id,material,sku,supplier,supplier_code,cost_aud,rrp_aud,weight_kg,storefront,issues
+"Jacket, Style 2","Jacket, Style 2",jacket-b,standard,100% polyester fiber,TF-P-J-2-AM,AMY,HZ 7177,30.28,69.99,0.68,yes,
+Crewneck Jacket,Crewneck Jacket,jacket,standard,100% polyester fiber,TF-P-J-3-NH-AM,AMY,HZ8518,24.05,64.99,0.68,yes,
+Premium Vest,"Premium Vest, Style 2",vest,premium,"100% nylon fabric, polyester lining, polyester filling",TF-N-V-AM,AMY,,33.50,69.99,0.75,yes,
+Hoodie,"Hoodie, Style 1",hoodie,style-1,"100% cotton, 450 GSM",TF-C-H-AM,AMY,HX Y06,26.57,59.99,0.71,yes,
+Polo,"Polo, Option 1",work-polo,option-1,40% cotton / 60% polyester,TF-QDC-P-1-AM,AMY,,27.48,39.99,0.56,yes,
+Polo,"Polo, Option 2",work-polo,option-2,"73.5% long-staple cotton / 26.5% elastic fiber, 230 GSM",TF-EQDC-P-4-AM,ELLA,TS-D659,17.83,39.99,0.56,yes,
+Polo,"Polo, Option 3",work-polo,option-3,100% cotton,TF-C-P-5-AM,AMY,,19.83,39.99,0.56,yes,
+T-Shirt,"T-Shirt, 240 GSM",work-t-shirt,240gsm,"100% cotton, 240 GSM",TF-C-TS-240-AM,CHENGYU,QP T027,,39.99,0.56,yes,Supplier cost not supplied.
+T-Shirt,"T-Shirt, 260 GSM",work-t-shirt,260gsm,"100% cotton, 260 GSM",TF-C-TS-260-AM,CHENGYU,QP T018,,39.99,0.56,yes,Supplier cost not supplied.
+Tank Top,Tank Top,tank-top,standard,—,TF-C-TT-AM,,,,37.99,0.56,yes,"Supplier, supplier cost and material not supplied (existing RRP A$37.99 retained)."
+Cap,Cap,cap,standard,—,,,,,29.99,,yes,"SKU mapping required — no cap SKU supplied (inventory PDF has Trucker Hat TF-TH-IN and 5 Panel Hats TF-PH-IN; neither confirmed for this 6-panel cap). | Supplier, cost, material, RRP and shipping weight not supplied (existing A$29.99 retained). | No shipping weight: caps are excluded from the calculated shipment weight and the order is flagged for a shipping review."
+Quarterzip,Quarterzip,—,—,100% polyester,TF-QZ-P-AM,AMY,TS 3817,20.33,54.99,0.71,no,"Stored only — no product page, images or placements until requested."
+"Lightweight Vest, Style 1","Lightweight Vest, Style 1",—,—,"100% nylon fabric, polyester lining, polyester filling",TF-N-V-EL,ELLA,,21.09,54.95,0.75,no,Stored only — removed from the storefront (not -AM); not selectable in the shop or bundles.
